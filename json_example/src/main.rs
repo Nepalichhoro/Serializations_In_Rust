@@ -16,8 +16,11 @@ fn main() {
     // Serialize
     let serialized = serde_json::to_string(&original).unwrap();
     println!("Serialized: {:?}", serialized);
+    // logs: Serialized: "{\"field1\":42,\"field2\":\"Hello, Serde!\"}"
 
     // Deserialize
     let deserialized: MyStruct = serde_json::from_str(&serialized).unwrap();
     println!("Deserialized: {:?}", deserialized);
+    // logs: Deserialized: MyStruct { field1: 42, field2: "Hello, Serde!" }
+
 }
